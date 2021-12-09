@@ -8,6 +8,8 @@ const Key = require('../../models/Key');
 router.post('/', async (req, res) => {
   let keyVal;
   let val;
+  // Time to UTC
+  const utcDate = moment.utc().toDate();
 
   // Repair {Key: mykey, values: [value: value, timestamp: timestamp]}
   for (const [mykey, value] of Object.entries(req.body)) {
@@ -19,13 +21,10 @@ router.post('/', async (req, res) => {
     values: [],
   };
 
-  // Time to UTC
-  const utcDate = moment.utc().toDate();
-
   const valObj = { value: val, timestamp: utcDate };
   Obj.values.push(valObj);
 
-  // Convert Current Time to AM/PM
+  // Format Current Time to AM/PM
   const formatAMPM = date => {
     var hours = date.getUTCHours();
     var minutes = date.getMinutes();
