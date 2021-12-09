@@ -1,5 +1,8 @@
 # API-DEMO
 
+- Nodejs
+- MongoDB
+
 ## Installation
 ```sh
 yarn && cp .env.sample .env
