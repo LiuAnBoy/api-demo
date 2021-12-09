@@ -1,6 +1,6 @@
 # API-DEMO
 
-### Installation
+## Installation
 ```sh
 yarn && cp .env.sample .env
 npm install && cp .env.sample .env
